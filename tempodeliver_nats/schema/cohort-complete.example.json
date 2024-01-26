@@ -1,0 +1,16 @@
+{
+	"cohortId": "CCS_PPPQQQQ",
+	"date": "2022-11-12 21:59:10",
+	"type": "investigator",
+	"analyst": 
+	    [
+	        "noronhaa",
+	        "gongy"
+	    ],
+	"samples": [
+        {"primaryId": "12345_A_3", "normal_primaryId":"12345_A_4"},
+        {"primaryId": "12345_A_5", "normal_primaryId":"12345_A_6"},
+        {"primaryId": "23456_B_3", "normal_primaryId":"23456_B_4"}
+	],
+	"status":"PASS"
+}
