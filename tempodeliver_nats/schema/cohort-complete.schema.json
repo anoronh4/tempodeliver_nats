@@ -9,7 +9,7 @@
             "description": "Cohort identifier"
             
         },
-        "date": {
+        "timestamp": {
             "type": "string",
             "description": "Date of when the MAF analysis completed (YYYY-MM-DD HH:MM:SS)",
             "pattern": "^\\d{4}\\-(0?[1-9]|1[012])\\-(0?[1-9]|[12][0-9]|3[01]) ([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$"
@@ -54,5 +54,5 @@
             "enum": ["PASS","FAIL"]
         }
     },
-    "required":["cohortId","date","type","samples","analyst","status"]
+    "required":["cohortId","timestamp","type","samples","analyst","status"]
 }
