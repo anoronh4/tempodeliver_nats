@@ -7,22 +7,7 @@ from nats.aio.client import Client as NATS
 import ssl
 import configparser
 
-
-def show_usage():
-    usage = """
-nats-req SUBJECT [-d DATA] [-s SERVER]
-Example:
-nats-req hello -d world -s nats://127.0.0.1:4222 -s nats://127.0.0.1:4223
-"""
-    print(usage)
-
-
-def show_usage_and_die():
-    show_usage()
-    sys.exit(1)
-
-
-async def run(loop):
+def usage():
     parser = argparse.ArgumentParser()
 
     # e.g. nats-req hello -d "world" -s nats://127.0.0.1:4222 -s nats://127.0.0.1:4223
@@ -34,7 +19,9 @@ async def run(loop):
     parser.add_argument("--key")
     parser.add_argument("--cfg")
     args = parser.parse_args()
+    return args
 
+async def run(loop,args):
     nc = NATS()
 
     async def error_cb(e):
@@ -93,7 +80,6 @@ async def run(loop):
     except Exception as e:
         print("error connecting")
         print(e)
-        show_usage_and_die()
 
     print(f"Connected to NATS at {nc.connected_url.netloc}...")
     # msg = await nc.request(args.subject, args.data.encode())
@@ -114,6 +100,6 @@ async def run(loop):
 if __name__ == "__main__":
     loop = asyncio.get_event_loop()
     try:
-        loop.run_until_complete(run(loop))
+        loop.run_until_complete(run(loop,usage()))
     finally:
         loop.close()
