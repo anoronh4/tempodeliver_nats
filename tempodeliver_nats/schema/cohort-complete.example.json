@@ -8,9 +8,9 @@
 	        "gongy"
 	    ],
 	"samples": [
-        {"primaryId": "12345_A_3", "normal_primaryId":"12345_A_4"},
-        {"primaryId": "12345_A_5", "normal_primaryId":"12345_A_6"},
-        {"primaryId": "23456_B_3", "normal_primaryId":"23456_B_4"}
+        {"primaryId": "12345_A_3", "normalPrimaryId":"12345_A_4"},
+        {"primaryId": "12345_A_5", "normalPrimaryId":"12345_A_6"},
+        {"primaryId": "23456_B_3", "normalPrimaryId":"23456_B_4"}
 	],
 	"status":"PASS"
 }

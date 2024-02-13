@@ -14,7 +14,7 @@
             "description": "Date of when the MAF analysis completed (YYYY-MM-DD HH:MM)",
             "pattern": "^\\d{4}\\-(0?[1-9]|1[012])\\-(0?[1-9]|[12][0-9]|3[01]) ([01][0-9]|2[0-3]):[0-5][0-9]$"
         },
-        "normal_primaryId":{
+        "normalPrimaryId":{
             "type":"string",
             "description":"Stable sample identifier of the normal sample",
             "pattern": "^\\d{5}_(?:[A-Z]*_)?\\d*$"
@@ -25,5 +25,5 @@
             "enum": ["PASS","FAIL"]
         }
     },
-    "required": ["primaryId","date","normal_primaryId","status"]
+    "required": ["primaryId","date","normalPrimaryId","status"]
 }

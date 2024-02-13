@@ -38,13 +38,13 @@
                          "pattern": "^\\d{5}_(?:[A-Z]*_)?\\d*$"
 
                      },
-                     "normal_primaryId": {
+                     "normalPrimaryId": {
                          "type":"string",
                          "description": "Stable normal sample identifier",
                          "pattern": "^\\d{5}_(?:[A-Z]*_)?\\d*$"
                      }
                  },
-                 "required":["primaryId","normal_primaryId"]
+                 "required":["primaryId","normalPrimaryId"]
             },
             "uniqueItems": true
         },
