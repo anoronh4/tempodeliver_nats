@@ -3,10 +3,10 @@
 	"date": "2022-11-12 21:59",
 	"type": "investigator",
 	"analyst": 
-	    [
-	        "noronhaa",
-	        "gongy"
-	    ],
+        [
+            "noronhaa",
+            "gongy"
+        ],
 	"samples": [
         {"primaryId": "12345_A_3", "normalPrimaryId":"12345_A_4"},
         {"primaryId": "12345_A_5", "normalPrimaryId":"12345_A_6"},
