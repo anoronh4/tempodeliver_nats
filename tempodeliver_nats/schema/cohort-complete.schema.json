@@ -7,44 +7,74 @@
         "cohortId": {
             "type": "string",
             "description": "Cohort identifier"
-            
-        },
-        "date": {
-            "type": "string",
-            "description": "Date of when the MAF analysis completed (YYYY-MM-DD HH:MM)",
-            "pattern": "^\\d{4}\\-(0?[1-9]|1[012])\\-(0?[1-9]|[12][0-9]|3[01]) ([01][0-9]|2[0-3]):[0-5][0-9]$"
         },
         "type":{
             "type": "string",
             "description": "Date of when the MAF analysis completed (YYYY-MM-DD)",
             "enum":["investigator","MSKWESRP","operational"]
         },
-        "analyst":{
+        "endUsers":{
             "type":"array",
             "description":"Analysts with access to the sample via cohorts",
             "items": {
-                 "type": "string"
+                "type": "string"
             }
+        },
+        "pmUsers":{
+            "type":"array",
+            "description":"PMs managing the cohort",
+            "items": {
+                "type": "string"
+            }
+        },
+        "projectTitle":{
+            "type":"string",
+            "description":"PMs managing the cohort",
+            "items": {
+                "type": "string"
+            }
+        },
+        "projectSubtitle":{
+            "type":"string",
+            "description":"PMs managing the cohort",
+            "items": {
+                "type": "string"
+            }
+        },
+        "holdBamsAndFastqs": {
+            "type": "boolean",
+            "description": "Whether to deliver Fastqs and Bams or not"
         },
         "samples":{
             "type":"array",
             "description": "List of paired tumors in the cohort",
             "items": {
-                 "type": "object",
-                 "properties": {
-                     "primaryId": {
-                         "type":"string",
-                         "description": "Stable tumor sample identifier",
-                         "pattern": "^\\d{5}_(?:[A-Z]*_)?\\d*$"
+                "type": "object",
+                "properties": {
+                    "primaryId": {
+                        "type":"string",
+                        "description": "Stable tumor sample identifier",
+                        "pattern": "^\\d{5}_(?:[A-Z]*_)?\\d*$"
 
-                     },
-                     "normalPrimaryId": {
-                         "type":"string",
-                         "description": "Stable normal sample identifier",
-                         "pattern": "^\\d{5}_(?:[A-Z]*_)?\\d*$"
-                     }
-                 },
-                 "required":["primaryId","normalPrimaryId"]
+                    },
+                    "normalPrimaryId": {
+                        "type":"string",
+                        "description": "Stable normal sample identifier",
+                        "pattern": "^\\d{5}_(?:[A-Z]*_)?\\d*$"
+                    },
+                    "cmoId": {
+                        "type":"string",
+                        "description": "Stable tumor sample identifier",
+                        "pattern": "^C-[A-Z0-9]{6}-[LGPMTX][0-9]{3}-d[0-9]{,2}$|^s_C_[A-Z0-9]{6}_[LGPMTX][0-9]{3}_d[0-9]{,2}$"
+
+                    },
+                    "normalCmoId": {
+                        "type":"string",
+                        "description": "Stable normal sample identifier",
+                        "pattern": "^C-[A-Z0-9]{6}-N[0-9]{3}-d[0-9]{,2}$|^s_C_[A-Z0-9]{6}_N[0-9]{3}_d[0-9]{,2}$"
+                    }
+                },
+                "required":["primaryId","normalPrimaryId"]
             },
             "uniqueItems": true
         },
@@ -52,7 +82,12 @@
             "type": "string",
             "description": "Status of TEMPO workflow completion.",
             "enum": ["PASS","FAIL"]
+        },
+        "date": {
+            "type": "string",
+            "description": "Date of when the Cohort analysis completed (YYYY-MM-DD HH:MM)",
+            "pattern": "^\\d{4}\\-(0?[1-9]|1[012])\\-(0?[1-9]|[12][0-9]|3[01]) ([01][0-9]|2[0-3]):[0-5][0-9]$"
         }
     },
-    "required":["cohortId","date","type","samples","analyst","status"]
+    "required":["cohortId","date","type","samples","endUsers","pmUsers","status","projectTitle"]
 }

@@ -1,16 +1,15 @@
 {
-	"cohortId": "CCS_PPPQQQQ",
-	"date": "2022-11-12 21:59",
-	"type": "investigator",
-	"analyst": 
-        [
-            "noronhaa",
-            "gongy"
+        "cohortId": "CCS_PPPQQQQ",
+        "date": "2022-11-12 21:59",
+        "type": "investigator",
+        "endUsers": ["noronhaa","gongy"],
+        "pmUsers": ["raop","skicmopm"],
+        "projectTitle":"A title",
+        "projectSubtitle":"A longer description",
+        "samples": [
+                {"primaryId": "12345_A_3", "normalPrimaryId":"12345_A_4"},
+                {"primaryId": "12345_A_5", "normalPrimaryId":"12345_A_6"},
+                {"primaryId": "23456_B_3", "normalPrimaryId":"23456_B_4"}
         ],
-	"samples": [
-        {"primaryId": "12345_A_3", "normalPrimaryId":"12345_A_4"},
-        {"primaryId": "12345_A_5", "normalPrimaryId":"12345_A_6"},
-        {"primaryId": "23456_B_3", "normalPrimaryId":"23456_B_4"}
-	],
-	"status":"PASS"
+        "status":"PASS"
 }
